@@ -31,10 +31,11 @@ module Message::Attachment
     end
 
     def process_attachment_thumbnail
-      case
-      when attachment.video?
+      return unless attachment.attached?
+
+      if attachment.previewable?
         attachment.preview(format: :webp).processed
-      when attachment.representable?
+      elsif attachment.representable?
         attachment.representation(:thumb).processed
       end
     end

@@ -16,5 +16,6 @@ module Campfire
 
     # Fallback to English if translation key is missing
     config.i18n.fallbacks = true
+    config.i18n.default_locale = :"zh-CN"
   end
 end

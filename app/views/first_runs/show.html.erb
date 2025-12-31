@@ -1,4 +1,4 @@
-<% @page_title = "Set up Campfire" %>
+<% @page_title = t("first_runs.show.title") %>
 <% @body_class = "signup" %>
 
 <%= form_with model: @user, url: first_run_path, class: "center max-width" do |form| %>
@@ -16,12 +16,13 @@
             <%= image_tag "camera.svg", aria: { hidden: "true" } %>
             <%= form.file_field :avatar, class: "input", accept: "image/*",
                   data: { upload_preview_target: "input", action: "upload-preview#previewImage" } %>
-            <span class="for-screen-reader">Add your avatar</span>
+            <span class="for-screen-reader"><%= t("first_runs.show.add_avatar") %></span>
           </div>
 
           <div class="btn avatar input--file txt-xx-large">
-            <%= image_tag "default-avatar.svg", aria: { hidden: "true" }, data: { upload_preview_target: "image" }, alt: "Add your avatar" %>
-            <span class="for-screen-reader">Avatar</span>
+            <%= image_tag "default-avatar.svg", aria: { hidden: "true" }, data: { upload_preview_target: "image" },
+                  alt: t("first_runs.show.add_avatar") %>
+            <span class="for-screen-reader"><%= t("first_runs.show.avatar") %></span>
           </div>
         </label>
       </fieldset>
@@ -29,7 +30,8 @@
       <div class="flex align-center gap">
         <%= translation_button(:user_name) %>
         <label class="flex align-center gap flex-item-grow txt-large input input--actor">
-          <%= form.text_field :name, class: "input", autocomplete: "name", placeholder: "Name", autofocus: true, required: true,
+          <%= form.text_field :name, class: "input", autocomplete: "name", placeholder: t("first_runs.show.name_placeholder"),
+                autofocus: true, required: true,
                 data: { "1p-ignore": true } %>
           <%= image_tag "person.svg", aria: { hidden: "true" }, size: 24, class: "colorize--black" %>
         </label>
@@ -38,7 +40,8 @@
       <div class="flex align-center gap">
         <%= translation_button(:email_address) %>
         <label class="flex align-center gap flex-item-grow txt-large input input--actor">
-          <%= form.email_field :email_address, class: "input", autocomplete: "username", placeholder: "Email address", required: true %>
+          <%= form.email_field :email_address, class: "input", autocomplete: "username",
+                placeholder: t("first_runs.show.email_placeholder"), required: true %>
           <%= image_tag "email.svg", aria: { hidden: "true" }, size: 24, class: "colorize--black" %>
         </label>
       </div>
@@ -46,14 +49,15 @@
       <div class="flex align-center gap">
         <%= translation_button(:password) %>
         <label class="flex align-center gap flex-item-grow txt-large input input--actor">
-          <%= form.password_field :password, class: "input", autocomplete: "new-password", placeholder: "Password", required: true, maxlength: 72 %>
+          <%= form.password_field :password, class: "input", autocomplete: "new-password",
+                placeholder: t("first_runs.show.password_placeholder"), required: true, maxlength: 72 %>
           <%= image_tag "password.svg", aria: { hidden: "true" }, size: 24, class: "colorize--black" %>
         </label>
       </div>
 
       <%= form.button class: "btn btn--reversed center txt-large", type: "submit" do %>
         <%= image_tag "arrow-right.svg", aria: { hidden: "true" } %>
-        <span class="for-screen-reader">Save</span>
+        <span class="for-screen-reader"><%= t("first_runs.show.submit") %></span>
       <% end %>
     </div>
   </section>

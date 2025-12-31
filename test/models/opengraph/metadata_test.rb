@@ -30,7 +30,7 @@ class Opengraph::MetadataTest < ActiveSupport::TestCase
     opengraph = Opengraph::Metadata.from_url("https://www.example.com")
 
     assert_not opengraph.valid?
-    assert_equal [ "Title can't be blank", "Description can't be blank" ],  opengraph.errors.full_messages
+    assert_equal expected_missing_messages, opengraph.errors.full_messages
   end
 
   test "URL uses the provided value if the returned value is missing" do
@@ -167,4 +167,20 @@ class Opengraph::MetadataTest < ActiveSupport::TestCase
 
     assert_nil metadata.image
   end
+
+  private
+    def expected_missing_messages
+      [
+        missing_message_for(:title),
+        missing_message_for(:description)
+      ]
+    end
+
+    def missing_message_for(attribute)
+      I18n.t(
+        "errors.format",
+        attribute: Opengraph::Metadata.human_attribute_name(attribute),
+        message: I18n.t("errors.messages.blank")
+      )
+    end
 end

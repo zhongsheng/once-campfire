@@ -9,7 +9,7 @@
     <% if Current.user == @user %>
       <%= link_to user_profile_path, class: "btn" do %>
         <%= image_tag "pencil.svg", aria: { hidden: "true" } %>
-        <span class="for-screen-reader">Edit my profile</span>
+        <span class="for-screen-reader"><%= t("users.show.edit_profile") %></span>
       <% end %>
     <% end %>
   </div>

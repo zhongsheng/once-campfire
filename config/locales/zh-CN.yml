@@ -1,0 +1,98 @@
+zh-CN:
+  activemodel:
+    attributes:
+      "opengraph/metadata":
+        title: "标题"
+        description: "描述"
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      blank: "不能为空"
+  account_settings:
+    wecom:
+      title: "企业微信 & Coze 集成"
+      description: "填写企业微信外部群机器人与 Coze Studio Agent 的配置，保存后即可通过回调转发消息。"
+      wecom_token: "WECOM_TOKEN"
+      wecom_aes_key: "WECOM_AES_KEY"
+      wecom_corp_id: "WECOM_CORP_ID"
+      wecom_corp_secret: "WECOM_CORP_SECRET"
+      wecom_agent_id: "WECOM_AGENT_ID"
+      coze_api_key: "COZE_API_KEY"
+      coze_bot_id: "COZE_BOT_ID"
+      coze_api_base_url: "COZE_API_BASE_URL（可选）"
+  sessions:
+    new:
+      title: "登录"
+      email_placeholder: "请输入邮箱"
+      password_placeholder: "请输入密码"
+      submit: "登录"
+  users:
+    new:
+      title: "注册"
+      sign_in: "登录"
+      upload_avatar: "上传头像"
+      avatar: "头像"
+      name_placeholder: "姓名"
+      email_placeholder: "邮箱"
+      password_placeholder: "密码"
+      submit: "保存"
+    ban:
+      confirm_ban: "确定要封禁该用户吗？这会让其退出、删除消息并封锁 IP 地址。"
+      confirm_unban: "确定要解除该用户的封禁吗？"
+    sidebar:
+      new: "新建"
+      ping: "私信"
+    show:
+      edit_profile: "编辑我的资料"
+  first_runs:
+    show:
+      title: "设置 Campfire"
+      add_avatar: "添加头像"
+      avatar: "头像"
+      name_placeholder: "姓名"
+      email_placeholder: "邮箱"
+      password_placeholder: "密码"
+      submit: "保存"
+  messages:
+    template:
+      options: "消息选项"
+    edit:
+      confirm_delete: "确定要删除这条消息吗？"
+      delete: "删除消息"
+      aria_label: "编辑消息"
+      cancel_link: "关闭编辑并放弃修改"
+      save: "保存修改"
+    boosts:
+      add_boost: "添加表情"
+      submit: "提交"
+      cancel: "取消"
+      delete: "删除这个表情"
+      delete_hint: "按回车删除这个表情"
+  searches:
+    index:
+      title: "搜索"
+      confirm_clear: "确定要清空最近的搜索吗？"
+      clear_recent: "清空最近搜索"
+      exit_search: "退出搜索"
+      aria_label: "搜索"
+      clear_field: "清空搜索框"
+      submit: "搜索"
+  rooms:
+    closeds:
+      everyone: "所有人"
+      everyone_access: "允许所有人进入此房间"
+      user_access: "允许 %{name} 进入此房间"
+    layouts:
+      edit_title: "编辑 %{name} 设置"
+      name_placeholder: "房间名称"
+      name_label: "命名此房间"
+  layouts:
+    lightbox:
+      aria_label: "图片查看器（按 ESC 关闭）"
+      close: "关闭图片查看器"
+      download: "下载文件"
+      share: "分享文件"
+    application:
+      skip_to_main: "跳到主要内容"
+      once_home: "Once 软件主页"
+      logo_alt: "Campfire 标志"
