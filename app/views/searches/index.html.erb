@@ -1,4 +1,4 @@
-<% @page_title = "Search" %>
+<% @page_title = t("searches.index.title") %>
 <% @body_class = "sidebar searches" %>
 
 <% content_for :nav do %>
@@ -20,9 +20,9 @@
 
     <% if @recent_searches.any? %>
       <%= button_to clear_searches_url, method: :delete, class: "btn searches__btn",
-              data: { turbo_confirm: "Are you sure you want to clear your recent searches?" } do %>
+              data: { turbo_confirm: t("searches.index.confirm_clear") } do %>
         <%= image_tag "broom.svg", aria: { hidden: "true" } %>
-        <span class="for-screen-reader">Clear recent searches</span>
+        <span class="for-screen-reader"><%= t("searches.index.clear_recent") %></span>
       <% end %>
     <% end %>
   </div>
@@ -38,9 +38,9 @@
 
     <% if @recent_searches.any? %>
       <%= button_to clear_searches_url, method: :delete, class: "btn searches__btn",
-              data: { turbo_confirm: "Are you sure you want to clear your recent searches?" } do %>
+              data: { turbo_confirm: t("searches.index.confirm_clear") } do %>
         <%= image_tag "broom.svg", aria: { hidden: "true" } %>
-        <span class="for-screen-reader">Clear recent searches</span>
+        <span class="for-screen-reader"><%= t("searches.index.clear_recent") %></span>
       <% end %>
     <% end %>
   </div>
@@ -63,7 +63,7 @@
     <%= link_to room_path(@return_to_room),
             class: "btn flex-item-no-shrink margin-block-end", style: "view-transition-name: input-switcher; --btn-border-radius: 0.5em" do %>
       <%= image_tag "arrow-left.svg", aria: { hidden: "true" } %>
-      <span class="for-screen-reader">Exit search </span>
+      <span class="for-screen-reader"><%= t("searches.index.exit_search") %></span>
     <% end %>
 
     <%= form_with url: searches_path, class: "margin-block flex-item-grow contain flex align-center gap",
@@ -71,16 +71,17 @@
       <div class="composer__input flex align-center flex-item-grow gap full-width input input--actor min-width">
         <%= image_tag "search.svg", size: 20, aria: { hidden: "true" }, class: "composer__input-hint colorize--black", style: "view-transition-name: input-btn;" %>
 
-        <%= form.text_field :q, value: params[:q], class: "searches__input input flex-item-grow", role: "searchbox", aria: { label: "search" }, autofocus: true, required: true %>
+        <%= form.text_field :q, value: params[:q], class: "searches__input input flex-item-grow", role: "searchbox",
+              aria: { label: t("searches.index.aria_label") }, autofocus: true, required: true %>
 
         <%= link_to searches_path, data: { form_target: "cancel" }, role: "button", class: "searches__reset" do %>
           <%= image_tag "remove.svg", aria: { hidden: "true" }, size: 14, class: "colorize--black" %>
-          <span class="for-screen-reader">Clear search field</span>
+          <span class="for-screen-reader"><%= t("searches.index.clear_field") %></span>
         <% end %>
 
         <%= form.button type: "submit", class: "btn btn--reversed flex-item-no-shrink txt-small", style: "--btn-border-radius: 0.5em" do %>
           <%= image_tag "arrow-up.svg", aria: { hidden: "true" } %>
-          <span class="for-screen-reader">Search</span>
+          <span class="for-screen-reader"><%= t("searches.index.submit") %></span>
         <% end %>
       </div>
     <% end %>

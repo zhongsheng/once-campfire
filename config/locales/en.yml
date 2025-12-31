@@ -30,3 +30,91 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  account_settings:
+    wecom:
+      title: "WeCom & Coze integration"
+      description: "Provide the WeCom group bot and Coze Studio Agent settings to enable callback forwarding."
+      wecom_token: "WECOM_TOKEN"
+      wecom_aes_key: "WECOM_AES_KEY"
+      wecom_corp_id: "WECOM_CORP_ID"
+      wecom_corp_secret: "WECOM_CORP_SECRET"
+      wecom_agent_id: "WECOM_AGENT_ID"
+      coze_api_key: "COZE_API_KEY"
+      coze_bot_id: "COZE_BOT_ID"
+      coze_api_base_url: "COZE_API_BASE_URL (optional)"
+  sessions:
+    new:
+      title: "Sign in"
+      email_placeholder: "Enter your email address"
+      password_placeholder: "Enter your password"
+      submit: "Go"
+  users:
+    new:
+      title: "Sign up"
+      sign_in: "Sign in"
+      upload_avatar: "Upload avatar"
+      avatar: "Avatar"
+      name_placeholder: "Name"
+      email_placeholder: "Email address"
+      password_placeholder: "Password"
+      submit: "Save"
+    ban:
+      confirm_ban: "Are you sure you want to ban this user? This will log them out, delete their messages, and block their IP addresses."
+      confirm_unban: "Are you sure you want to remove the ban on this user?"
+    sidebar:
+      new: "New"
+      ping: "Ping"
+    show:
+      edit_profile: "Edit my profile"
+  first_runs:
+    show:
+      title: "Set up Campfire"
+      add_avatar: "Add your avatar"
+      avatar: "Avatar"
+      name_placeholder: "Name"
+      email_placeholder: "Email address"
+      password_placeholder: "Password"
+      submit: "Save"
+  messages:
+    template:
+      options: "Message options"
+    edit:
+      confirm_delete: "Are you sure you want to delete this message?"
+      delete: "Delete message"
+      aria_label: "Edit message"
+      cancel_link: "Close editor and discard changes"
+      save: "Save changes"
+    boosts:
+      add_boost: "Add a boost"
+      submit: "Submit"
+      cancel: "Cancel"
+      delete: "Delete this boost"
+      delete_hint: "Press enter to delete this boost"
+  searches:
+    index:
+      title: "Search"
+      confirm_clear: "Are you sure you want to clear your recent searches?"
+      clear_recent: "Clear recent searches"
+      exit_search: "Exit search"
+      aria_label: "search"
+      clear_field: "Clear search field"
+      submit: "Search"
+  rooms:
+    closeds:
+      everyone: "Everyone"
+      everyone_access: "Give everyone access to this room"
+      user_access: "Give %{name} access to this room"
+    layouts:
+      edit_title: "Edit settings for %{name}"
+      name_placeholder: "Name the room"
+      name_label: "Name this room"
+  layouts:
+    lightbox:
+      aria_label: "Image Viewer (Press escape to close)"
+      close: "Close image viewer"
+      download: "Download file"
+      share: "Share file"
+    application:
+      skip_to_main: "Skip to main content"
+      once_home: "Once software from 37signals home page"
+      logo_alt: "Campfire logo"

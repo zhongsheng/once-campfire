@@ -11,6 +11,7 @@ class Message::AttachmentTest < ActiveSupport::TestCase
 
   test "creating a message creates video preview" do
     message = create_attachment_message("alpha-centuri.mov", "video/quicktime")
+    skip "Video previewer not available" unless message.attachment.previewable?
     assert message.reload.attachment.preview(format: :webp).image.attached?
   end
 

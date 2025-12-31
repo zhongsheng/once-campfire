@@ -30,7 +30,7 @@
   </head>
 
   <body class="<%= body_classes %>" data-controller="local-time lightbox">
-    <a href="#main-content" class="skip-navigation btn">Skip to main content</a>
+    <a href="#main-content" class="skip-navigation btn"><%= t("layouts.application.skip_to_main") %></a>
 
     <nav id="nav">
       <%= yield :nav %>
@@ -63,8 +63,8 @@
 
     <%= render "layouts/lightbox" %>
 
-    <a href="https://once.com" id="app-logo" target="_blank" aria-label="Once software from 37signals home page">
-      <%= image_tag "campfire-icon.png", alt: "Campfire logo", width: 256, height: 216 %>
+    <a href="https://once.com" id="app-logo" target="_blank" aria-label="<%= t("layouts.application.once_home") %>">
+      <%= image_tag "campfire-icon.png", alt: t("layouts.application.logo_alt"), width: 256, height: 216 %>
     </a>
   </body>
 </html>

@@ -88,6 +88,71 @@
 
       <% end %>
     </div>
+
+    <div class="margin-block-start pad-block pad-inline-double fill-shade border-radius">
+      <%= form_with model: @account, method: :patch, data: { controller: "form" }, class: "flex flex-column gap" do |form| %>
+        <div class="flex align-center gap">
+          <%= image_tag "bot.svg", aria: { hidden: "true" }, size: 20 %>
+          <strong><%= t("account_settings.wecom.title") %></strong>
+        </div>
+
+        <p class="txt-small txt-subtle margin-none">
+          <%= t("account_settings.wecom.description") %>
+        </p>
+
+        <%= form.fields_for :settings, @account.settings do |settings_form| %>
+          <div class="grid gap">
+            <label class="flex flex-column gap txt-align-start">
+              <span class="txt-small txt-subtle"><%= t("account_settings.wecom.wecom_token") %></span>
+              <%= settings_form.password_field :wecom_token, class: "input", autocomplete: "new-password" %>
+            </label>
+
+            <label class="flex flex-column gap txt-align-start">
+              <span class="txt-small txt-subtle"><%= t("account_settings.wecom.wecom_aes_key") %></span>
+              <%= settings_form.password_field :wecom_aes_key, class: "input", autocomplete: "new-password" %>
+            </label>
+
+            <label class="flex flex-column gap txt-align-start">
+              <span class="txt-small txt-subtle"><%= t("account_settings.wecom.wecom_corp_id") %></span>
+              <%= settings_form.text_field :wecom_corp_id, class: "input", autocomplete: "off" %>
+            </label>
+
+            <label class="flex flex-column gap txt-align-start">
+              <span class="txt-small txt-subtle"><%= t("account_settings.wecom.wecom_corp_secret") %></span>
+              <%= settings_form.password_field :wecom_corp_secret, class: "input", autocomplete: "new-password" %>
+            </label>
+
+            <label class="flex flex-column gap txt-align-start">
+              <span class="txt-small txt-subtle"><%= t("account_settings.wecom.wecom_agent_id") %></span>
+              <%= settings_form.text_field :wecom_agent_id, class: "input", autocomplete: "off" %>
+            </label>
+
+            <label class="flex flex-column gap txt-align-start">
+              <span class="txt-small txt-subtle"><%= t("account_settings.wecom.coze_api_key") %></span>
+              <%= settings_form.password_field :coze_api_key, class: "input", autocomplete: "new-password" %>
+            </label>
+
+            <label class="flex flex-column gap txt-align-start">
+              <span class="txt-small txt-subtle"><%= t("account_settings.wecom.coze_bot_id") %></span>
+              <%= settings_form.text_field :coze_bot_id, class: "input", autocomplete: "off" %>
+            </label>
+
+            <label class="flex flex-column gap txt-align-start">
+              <span class="txt-small txt-subtle"><%= t("account_settings.wecom.coze_api_base_url") %></span>
+              <%= settings_form.text_field :coze_api_base_url, class: "input", autocomplete: "off",
+                    placeholder: Coze::Client::DEFAULT_BASE_URL %>
+            </label>
+          </div>
+        <% end %>
+
+        <div class="flex align-center gap">
+          <%= form.button class: "btn btn--reversed center", type: "submit" do %>
+            <%= image_tag "check.svg", aria: { hidden: "true" }, size: 20 %>
+            <span class="for-screen-reader">Save changes</span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   <% else %>
     <%= account_logo_tag style: "txt-xx-large center" %>
     <h1 class="flex-item-grow txt-x-large"><%= @account.name %></h1>

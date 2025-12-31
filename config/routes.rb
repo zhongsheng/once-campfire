@@ -85,6 +85,11 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :integrations do
+    get "wecom", to: "wecom#verify"
+    post "wecom", to: "wecom#receive"
+  end
+
   resources :searches, only: %i[ index create ] do
     delete :clear, on: :collection
   end

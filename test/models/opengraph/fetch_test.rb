@@ -5,6 +5,18 @@ class Opengraph::FetchTest < ActiveSupport::TestCase
   setup do
     @fetch = Opengraph::Fetch.new
     @url = URI.parse("https://www.example.com")
+    @http_proxy = ENV.delete("http_proxy")
+    @https_proxy = ENV.delete("https_proxy")
+    @all_proxy = ENV.delete("all_proxy")
+    ENV.delete("HTTP_PROXY")
+    ENV.delete("HTTPS_PROXY")
+    ENV.delete("ALL_PROXY")
+  end
+
+  teardown do
+    ENV["http_proxy"] = @http_proxy if @http_proxy
+    ENV["https_proxy"] = @https_proxy if @https_proxy
+    ENV["all_proxy"] = @all_proxy if @all_proxy
   end
 
   test "#fetch_document fetches valid HTML" do
